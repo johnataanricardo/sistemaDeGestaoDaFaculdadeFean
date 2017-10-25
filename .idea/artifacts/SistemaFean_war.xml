@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SistemaFean:war">
+    <output-path>$PROJECT_DIR$/SistemaFean/target</output-path>
+    <root id="archive" name="faculdadeFean.war">
+      <element id="artifact" artifact-name="SistemaFean:war exploded" />
+    </root>
+  </artifact>
+</component>
