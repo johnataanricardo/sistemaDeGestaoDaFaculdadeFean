@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Created by johnatan on 25/10/2017.
  */
 @EnableWebMvc
-@ComponentScan(basePackageClasses = HomeController.class)
+@ComponentScan(basePackages = "br.com.fean.si.poo3.controller")
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
     @Bean
