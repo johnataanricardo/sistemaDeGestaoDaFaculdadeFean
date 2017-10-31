@@ -1,6 +1,5 @@
 package br.com.fean.si.poo3.conf;
 
-import br.com.fean.si.poo3.controller.HomeController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -12,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Created by johnatan on 25/10/2017.
  */
 @EnableWebMvc
-@ComponentScan(basePackages = "br.com.fean.si.poo3.controller")
+@ComponentScan(basePackages = {"br.com.fean.si.poo3.controller", "br.com.fean.si.poo3.dao", "br.com.fean.si.poo3.service"})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
     @Bean

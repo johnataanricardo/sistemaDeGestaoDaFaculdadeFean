@@ -12,7 +12,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public ModelAndView view () {
-        ModelAndView view = new ModelAndView("index");
+        ModelAndView view = new ModelAndView("usuarios/login");
         return view;
     }
 
