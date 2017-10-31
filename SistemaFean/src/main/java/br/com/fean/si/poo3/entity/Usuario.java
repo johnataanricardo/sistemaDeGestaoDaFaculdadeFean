@@ -9,11 +9,10 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class Usuario {
 
-    @NotNull
     private Long id;
 
     @NotBlank
-    @Size(min = 3, max = 50, message="Campo requerido entre {min} e {max} caracteres.")
+    @Size(min = 3, max = 50)
     private String nome;
 
     @NotNull(message = "O campo	'data de nascimento' é requerido.")
@@ -28,10 +27,10 @@ public class Usuario {
     private String senha;
 
     @NotBlank
-    @Size(min = 5, max = 20, message="Campo requerido entre {min} e {max} caracteres.")
+    @Size(min = 5, max = 50, message="Campo requerido entre {min} e {max} caracteres.")
     private String email;
 
-    private TipoSexo sexo;//email,telefone,usuario e senha
+    private TipoSexo sexo;
 
     private Perfil perfil;
 

@@ -11,12 +11,12 @@ public interface UsuarioService {
 
     public void add(Usuario usuario);
 
-    public void remove(Usuario id);
+    public void remove(Long id);
 
     public void update(Usuario usuario);
 
     public List<Usuario> usuarios();
 
-    public Usuario findById(Integer id);
+    public Usuario findById(Long id);
 
 }

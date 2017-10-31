@@ -24,12 +24,13 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public void remove(Usuario usuario) {
-        dao.remove(usuario);
+    public void remove(Long id) {
+        dao.remove(id);
     }
 
     @Override
     public void update(Usuario usuario) {
+        System.out.println("entrou no update service");
         dao.update(usuario);
     }
 
@@ -39,8 +40,6 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public Usuario findById(Integer id) {
-        return null;
-    }
+    public Usuario findById(Long id) { return dao.findById(id); }
 
 }
