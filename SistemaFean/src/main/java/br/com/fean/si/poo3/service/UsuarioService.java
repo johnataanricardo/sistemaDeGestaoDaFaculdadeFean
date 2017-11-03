@@ -1,12 +1,10 @@
 package br.com.fean.si.poo3.service;
 
+import br.com.fean.si.poo3.dto.UsuarioDTO;
 import br.com.fean.si.poo3.entity.Usuario;
 
 import java.util.List;
 
-/**
- * Created by Johnatan on 30/10/2017.
- */
 public interface UsuarioService {
 
     public void add(Usuario usuario);
@@ -15,8 +13,8 @@ public interface UsuarioService {
 
     public void update(Usuario usuario);
 
-    public List<Usuario> usuarios();
+    public List<UsuarioDTO> usuarios();
 
+//    public UsuarioDTO findById(Long id);
     public Usuario findById(Long id);
-
 }

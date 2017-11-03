@@ -5,9 +5,6 @@ import br.com.fean.si.poo3.entity.TipoSexo;
 
 import java.time.LocalDate;
 
-/**
- * Created by Johnatan on 30/10/2017.
- */
 public class UsuarioDTO {
 
     private Long id;

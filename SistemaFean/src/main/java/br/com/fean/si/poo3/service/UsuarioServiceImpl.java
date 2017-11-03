@@ -1,22 +1,19 @@
 package br.com.fean.si.poo3.service;
 
-import br.com.fean.si.poo3.dao.UsuarioDAOImpl;
+import br.com.fean.si.poo3.dao.UsuarioDAO;
+import br.com.fean.si.poo3.dto.UsuarioDTO;
 import br.com.fean.si.poo3.entity.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by Johnatan on 30/10/2017.
- */
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
-    //depois colocar DTO
-
     @Autowired
-    private UsuarioDAOImpl dao;
+    private UsuarioDAO dao;
 
     @Override
     public void add(Usuario usuario) {
@@ -30,16 +27,43 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public void update(Usuario usuario) {
-        System.out.println("entrou no update service");
         dao.update(usuario);
     }
 
     @Override
-    public List<Usuario> usuarios() {
-        return dao.usuarios();
+    public List<UsuarioDTO> usuarios() {
+        List<Usuario> usuarios = dao.usuarios();
+        List<UsuarioDTO> dtos = new LinkedList<>();
+        usuarios.forEach(usuario -> {
+            UsuarioDTO dto = new UsuarioDTO();
+            dto.setId(usuario.getId());
+            dto.setNome(usuario.getNome());
+            dto.setDtNascimento(usuario.getDtNascimento());
+            dto.setEmail(usuario.getEmail());
+            dto.setTelefone(usuario.getTelefone());
+            dto.setPerfil(usuario.getPerfil());
+            dtos.add(dto);
+        });
+        return dtos;
     }
 
     @Override
-    public Usuario findById(Long id) { return dao.findById(id); }
+//    public UsuarioDTO findById(Long id) {
+    public Usuario findById(Long id) { // DTO tem que ser implementado, está ocasionando problema ao mostrar a data na edição
+        // do usuário verificar problema e corrigir
+        Usuario usuario = dao.findById(id);
+        UsuarioDTO dto = new UsuarioDTO();
+        dto.setId(usuario.getId());
+        dto.setNome(usuario.getNome());
+        dto.setDtNascimento(usuario.getDtNascimento());
+        dto.setUsuario(usuario.getUsuario());
+        dto.setSenha(usuario.getSenha());
+        dto.setEmail(usuario.getEmail());
+        dto.setSexo(usuario.getSexo());
+        dto.setPerfil(usuario.getPerfil());
+        dto.setTelefone(usuario.getTelefone());
+//        return dto;
+        return usuario;
+    }
 
 }

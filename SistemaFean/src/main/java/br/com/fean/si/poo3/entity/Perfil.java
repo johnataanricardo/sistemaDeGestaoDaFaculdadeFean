@@ -1,10 +1,7 @@
 package br.com.fean.si.poo3.entity;
 
-/**
- * Created by Johnatan on 30/10/2017.
- */
 public enum Perfil {
-    ALUNO("Aluno"), PROFESSOR("Professor"), GESTOR("Gestor");
+    ALUNO("ALUNO"), PROFESSOR("PROFESSOR"), GESTOR("GESTOR");
 
     private String descricao;
 

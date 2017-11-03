@@ -2,9 +2,6 @@ package br.com.fean.si.poo3.conf;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-/**
- * Created by johnatan on 25/10/2017.
- */
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override

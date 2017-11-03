@@ -12,7 +12,7 @@ public class Usuario {
     private Long id;
 
     @NotBlank
-    @Size(min = 3, max = 50)
+    @Size(min = 3, max = 50, message="Campo requerido entre {min} e {max} caracteres.")
     private String nome;
 
     @NotNull(message = "O campo	'data de nascimento' é requerido.")
