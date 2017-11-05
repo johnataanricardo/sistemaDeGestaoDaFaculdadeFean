@@ -15,3 +15,5 @@ Eu e Lucas Ribeiro, dividimos nossas tarefas no Trello para que nós tivessemos 
 As seguintes atividades foram definidas: Arquitetura do Software (DONE), Adição do Template (DONE), Acesso do usuário (In Progress), Controle de usuários (DONE), Controle de Sala (To Do), Controle de Matérias (DONE).
 
 Nesta aplicação não há conexão com o banco de dados, todos os valores são armazenados na memória do JAVA.
+
+A aplicação está sendo desenvolvida em JAVA WEB utilizando o Framework Spring MVC, Maven para gerenciamento das dependências e estamos utilizando o seguinte template SB Admin Bootstrap(https://startbootstrap.com/template-overviews/sb-admin/).
