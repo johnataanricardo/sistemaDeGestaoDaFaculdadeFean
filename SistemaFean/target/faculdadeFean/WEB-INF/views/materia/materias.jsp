@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="/SistemaFean/materia/todas">
                             <i class="fa fa-book"></i>
                             <span class="nav-link-text">Matérias</span>
                         </a>
@@ -85,6 +85,58 @@
         </ol>
 
         <h1>Matérias</h1>
+
+        <div class="panel-heading">
+            <span>${ message == null ? '&nbsp' : message }</span>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-table"></i> Matérias
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Ações</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Ações</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <c:forEach var="materia" items="${ materias }">
+                            <tr>
+                                <td>${ materia.nome }</td>
+                                <td> ${materia.categoria.descricao}
+                                </td>
+                                <td class="center">
+                                    <spring:url value="/materia/update/${ materia.id }" var="update" />
+                                    <a class="fa fa-pencil-square-o fa-lg" title="Editar" href="${ update }"></a>
+
+                                    <spring:url value="/materia/delete/${ materia.id }" var="delete" />
+                                    <a class="fa fa-times fa-lg" title="Excluir" href="${ delete }"></a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">
+                <div>
+                    <spring:url value="/materia/cadastro" var="cadastro" />
+                    <a class="btn btn-primary" href="${ cadastro }">Nova Matéria</a>
+                </div>
+            </div>
+        </div>
 
     </div>
 

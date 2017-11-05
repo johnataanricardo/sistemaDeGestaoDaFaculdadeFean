@@ -45,7 +45,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="/SistemaFean/materia/todas">
                             <i class="fa fa-book"></i>
                             <span class="nav-link-text">Matérias</span>
                         </a>
@@ -90,19 +90,19 @@
                 <form:hidden path="id" />
                 <div class="form-group">
                     <label for="nome">Nome: </label>
-                    <form:input path="nome" class="form-control" />
+                    <form:input path="nome" class="form-control" placeholder="Nome" />
                     <form:errors path="nome" cssClass="label label-danger" />
                 </div>
 
                 <div class="form-group">
                     <label for="login">Login de Usuário: </label>
-                    <form:input path="usuario" class="form-control" />
+                    <form:input path="usuario" class="form-control" placeholder="Login de Usuário" />
                     <form:errors path="usuario" cssClass="label label-danger" />
                 </div>
 
                 <div class="form-group">
                     <label for="senha">Senha: </label>
-                    <form:input path="senha" type="password" class="form-control" />
+                    <form:input path="senha" type="password" class="form-control" placeholder="Senha" />
                     <form:errors path="senha" cssClass="label label-danger" />
                 </div>
 
@@ -122,19 +122,19 @@
 
                 <div class="form-group">
                     <label for="dtNascimento">Data de Nascimento</label>
-                    <form:input path="dtNascimento" class="form-control" type="date" />
+                    <form:input path="dtNascimento" class="form-control" type="date" placeholder="dd/mm/aaaa" />
                     <form:errors path="dtNascimento" cssClass="label label-danger" />
                 </div>
 
                 <div class="form-group">
                     <label for="email">E-mail: </label>
-                    <form:input path="email" class="form-control" />
+                    <form:input path="email" class="form-control" placeholder="E-mail" />
                     <form:errors path="email" cssClass="label label-danger" />
                 </div>
 
                 <div class="form-group">
                     <label for="Telefone">Telefone: </label>
-                    <form:input path="telefone" class="form-control" />
+                    <form:input path="telefone" class="form-control" placeholder="(99) 99999-9999" />
                     <form:errors path="telefone" cssClass="label label-danger" />
                 </div>
 

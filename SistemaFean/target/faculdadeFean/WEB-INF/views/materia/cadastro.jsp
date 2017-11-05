@@ -45,7 +45,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="/SistemaFean/materia/todas">
                             <i class="fa fa-book"></i>
                             <span class="nav-link-text">Matérias</span>
                         </a>
@@ -83,6 +83,41 @@
         </ol>
 
         <h1>Matérias</h1>
+
+        <div>
+            <spring:url value="${ materia.id == null ? '/materia/save' : '/materia/update' }" var="save" />
+            <form:form modelAttribute="materia" action="${save}" method="post">
+                <form:hidden path="id" />
+                <div class="form-group">
+                    <label for="nome">Nome: </label>
+                    <form:input path="nome" class="form-control" placeholder="Nome" />
+                    <form:errors path="nome" cssClass="label label-danger" />
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição: </label>
+                    <form:textarea path="descricao" class="form-control" rows="10" cols="20" placeholder="Descrição" />
+                    <form:errors path="descricao" cssClass="label label-danger" />
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoria: </label>
+                    <form:select path="categoria" class="form-control">
+                        <form:options items="${ categorias }" itemLabel="descricao" />
+                    </form:select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cargaHoraria">Carga Horária: </label>
+                    <form:input type="number" path="cargaHoraria" class="form-control" placeholder="Carga Horária"/>
+                    <form:errors path="cargaHoraria" cssClass="label label-danger" />
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+            </form:form>
+        </div>
 
     </div>
 

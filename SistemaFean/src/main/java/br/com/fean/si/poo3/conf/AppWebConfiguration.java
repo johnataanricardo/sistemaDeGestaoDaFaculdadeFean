@@ -1,7 +1,8 @@
 package br.com.fean.si.poo3.conf;
 
-import br.com.fean.si.poo3.conversor.PerfilConverter;
-import br.com.fean.si.poo3.conversor.TipoSexoConverter;
+import br.com.fean.si.poo3.conversor.materia.CategoriaConverter;
+import br.com.fean.si.poo3.conversor.usuario.PerfilConverter;
+import br.com.fean.si.poo3.conversor.usuario.TipoSexoConverter;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -31,6 +32,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new TipoSexoConverter());
         registry.addConverter(new PerfilConverter());
+        registry.addConverter(new CategoriaConverter());
     }
 
     @Override
