@@ -10,7 +10,7 @@ Após a definição do escopo da aplicação realizarmos um trabalho sobre arqui
 
 Foi solicitado que fosse implementado um projeto WEB com apenas 3 Crud's dividimos esse nos seguintes, crud de usuário, crud de matérias e crud de salas, as regras de negócios foram quebradas por muitos dos requisitos funcionais terem um acoplamento com outros requisitos funcionais.
 
-Eu e Lucas Ribeiro, dividimos nossas tarefas no Trello para que nós tivessemos um controle das atividas a serem realizadas.
+Eu e Lucas Ribeiro(https://github.com/becoolxz), dividimos nossas tarefas no Trello para que nós tivessemos um controle das atividas a serem realizadas.
 
 As seguintes atividades foram definidas: Arquitetura do Software (DONE), Adição do Template (DONE), Acesso do usuário (In Progress), Controle de usuários (DONE), Controle de Sala (To Do), Controle de Matérias (DONE).
 
