@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SistemaFean:war exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/SistemaFean_war_exploded2</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SistemaFean/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SistemaFean" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
