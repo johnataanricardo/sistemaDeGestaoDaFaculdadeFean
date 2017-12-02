@@ -9,7 +9,7 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"],
     datasets: [{
-      label: "Sessions",
+      label: "Matrículas",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",

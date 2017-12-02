@@ -1,10 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="form"   uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@page contentType="text/html" pageEncoding='UTF-8'  language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="form"   uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
+
     <title>Faculdade Fean</title>
     <!-- Bootstrap core CSS-->
     <link href="<c:url value="/assets/vendor/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
@@ -12,9 +13,25 @@
     <link href="<c:url value="/assets/vendor/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
     <link href="<c:url value="/assets/css/sb-admin.css"/>" rel="stylesheet" type="text/css">
+
+    <script src="<c:url value="/assets/vendor/jquery/jquery.min.js"/> "></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $("#segunda").val(${sala.segunda});
+            $("#terca").val(${sala.terca});
+            $("#quarta").val(${sala.quarta});
+            $("#quinta").val(${sala.quinta});
+            $("#sexta").val(${sala.sexta});
+        });
+
+    </script>
+
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="/SistemaFean/inicio">Faculdade FEAN</a>
@@ -45,15 +62,27 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="/SistemaFean/materia/todas">
                             <i class="fa fa-book"></i>
                             <span class="nav-link-text">Matérias</span>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="/SistemaFean/sala/todos">
                             <i class="fa fa-university"></i>
                             <span class="nav-link-text">Salas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/SistemaFean/curso/todos">
+                            <i class="fa fa-university"></i>
+                            <span class="nav-link-text">Cursos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/SistemaFean/matricula/todas">
+                            <i class="fa fa-id-card"></i>
+                            <span class="nav-link-text">Matrículas</span>
                         </a>
                     </li>
                 </ul>
@@ -83,6 +112,120 @@
         </ol>
 
         <h1>Salas</h1>
+
+        <div>
+            <spring:url value="${ sala.idSala == null ? '/sala/save' : '/sala/update' }" var="save" />
+            <form:form modelAttribute="sala" action="${save}" method="post" acceptCharset="utf-8">
+                <form:hidden path="idSala" />
+                <form:hidden path="numSala" />
+
+                <div class="form-group">
+                    <label for="categoria"> Categoria: </label>
+                    <form:select path="categoria" class="form-control">
+                        <form:options items="${ categorias }" itemLabel="descricao" />
+                    </form:select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dtCriacao">Data de Criação</label>
+                    <form:input path="dtCriacao" class="form-control" type="date"  />
+                    <form:errors path="dtCriacao" cssClass="label label-danger" />
+                </div>
+
+                <div class="form-group">
+                    <label for="dtAlocado">Data da matéria alocada</label>
+                    <form:input path="dtAlocado" class="form-control" type="date" />
+                    <form:errors path="dtAlocado" cssClass="label label-danger" />
+                </div>
+
+                <div class="form-group">
+                    <label for="qntCadeira">Quantidade de Cadeira </label>
+                    <form:input path="qntCadeira" class="form-control" type="number" placeholder="Quantidade de cadeira"/>
+                    <form:errors path="qntCadeira" cssClass="label label-danger" />
+                </div>
+
+                <div class="form-group">
+                    <label for="qntTomada">Quantidade de Tomada </label>
+                    <form:input path="qntTomada" class="form-control" type="number" placeholder="Quantidade de Tomada"/>
+                    <form:errors path="qntTomada" cssClass="label label-danger" />
+                </div>
+
+                <div class="form-group">
+                    <label for="qntArCondicionado">Quantidade de Ar condicionado </label>
+                    <form:input path="qntArCondicionado" class="form-control" type="number" placeholder="Quantidade de Ar-condicionado" />
+                    <form:errors path="qntArCondicionado" cssClass="label label-danger" />
+                </div>
+
+                <div class="form-group">
+                    <label for="qntJanela">Quantidade de Janela </label>
+                    <form:input path="qntJanela" class="form-control" type="number" placeholder="Quantidade de Janela" />
+                    <form:errors path="qntJanela" cssClass="label label-danger" />
+                </div>
+
+                <div class="form-control">
+
+                    <h4>Aulas da Sala </h4>
+
+                    <div class="form-group">
+                        <label>Segunda:</label>
+                        <form:select path="segunda" id="segunda" class="form-control">
+                            <option value="0">Selecione uma matéria </option>
+                            <c:forEach items="${materias}" var="materia">
+                                <option value="${materia.id}">${materia.nome}</option>
+                            </c:forEach>
+                        </form:select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Terça:</label>
+                        <form:select path="terca" id="terca" class="form-control">
+                            <option value="0">Selecione uma matéria </option>
+                            <c:forEach items="${materias}" var="materia">
+                                <option value="${materia.id}">${materia.nome}</option>
+                            </c:forEach>
+                        </form:select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quarta:</label>
+                        <form:select path="quarta" id="quarta" class="form-control">
+                            <option value="0">Selecione uma matéria </option>
+                            <c:forEach items="${materias}" var="materia">
+                                <option value="${materia.id}">${materia.nome}</option>
+                            </c:forEach>
+                        </form:select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quinta:</label>
+                        <form:select path="quinta" id="quinta" class="form-control">
+                            <option value="0">Selecione uma matéria </option>
+                            <c:forEach items="${materias}" var="materia">
+                                <option value="${materia.id}">${materia.nome}</option>
+                            </c:forEach>
+                        </form:select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sexta:</label>
+                        <form:select path="sexta" id="sexta" class="form-control">
+                            <option value="0">Selecione uma matéria </option>
+                            <c:forEach items="${materias}" var="materia">
+                                <option value="${materia.id}">${materia.nome}</option>
+                            </c:forEach>
+                        </form:select>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+
+            </form:form>
+        </div>
 
     </div>
 

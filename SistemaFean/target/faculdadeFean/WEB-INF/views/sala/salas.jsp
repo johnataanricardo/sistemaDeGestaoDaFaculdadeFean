@@ -1,10 +1,12 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form"   uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
+
+
     <title>Faculdade Fean</title>
     <!-- Bootstrap core CSS-->
     <link href="<c:url value="/assets/vendor/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
@@ -17,6 +19,7 @@
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="/SistemaFean/inicio">Faculdade FEAN</a>
@@ -47,15 +50,27 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="/SistemaFean/materia/todas">
                             <i class="fa fa-book"></i>
                             <span class="nav-link-text">Matérias</span>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="/SistemaFean/sala/todos">
                             <i class="fa fa-university"></i>
                             <span class="nav-link-text">Salas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/SistemaFean/curso/todos">
+                            <i class="fa fa-university"></i>
+                            <span class="nav-link-text">Cursos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/SistemaFean/matricula/todas">
+                            <i class="fa fa-id-card"></i>
+                            <span class="nav-link-text">Matrículas</span>
                         </a>
                     </li>
                 </ul>
@@ -94,54 +109,48 @@
             <div class="card-header">
                 <i class="fa fa-table"></i> Salas
             </div>
+
             <div class="card-body">
                 <div class="table-responsive">
+
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
+                            <th>Numero da Sala</th>
+                            <th>Categoria</th>
+                            <th>Ações</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
-                            <th>Coluna</th>
+                            <th>Numero da Sala</th>
+                            <th>Categoria</th>
+                            <th>Ações</th>
                         </tr>
                         </tfoot>
                         <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
-                        </tr>
+                        <c:forEach var="sala" items="${ salas }">
+                            <tr>
+                                <td> ${ sala.numSala }</td>
+                                <td> ${ sala.categoria.descricao }</td>
+
+                                <td class="center">
+                                    <spring:url value="/sala/update/${ sala.idSala }" var="update" />
+                                    <a class="fa fa-pencil-square-o fa-lg" title="Editar" href="${ update }"></a>
+
+                                    <spring:url value="/sala/delete/${ sala.idSala }" var="delete" />
+                                    <a class="fa fa-times fa-lg" title="Excluir" href="${ delete }"></a>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="card-footer small text-muted">
                 <div>
-                    <spring:url value="" var="" />
-                    <a class="btn btn-primary" href="">Nova Sala</a>
+                    <spring:url value="/sala/cadastro" var="cadastro" />
+                    <a class="btn btn-primary" href="${ cadastro }">Nova Sala</a>
                 </div>
             </div>
         </div>

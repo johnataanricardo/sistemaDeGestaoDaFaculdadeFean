@@ -39,10 +39,11 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     }
 
     @Override
-    public void add(Usuario usuario) {
+    public Usuario add(Usuario usuario) {
         long posicao = user.size();
         usuario.setId(posicao + 1);
         user.add(usuario);
+        return usuario;
     }
 
     @Override

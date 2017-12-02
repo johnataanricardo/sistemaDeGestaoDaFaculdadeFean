@@ -11383,7 +11383,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "Nenhum registro foi encontrado",
 	
 	
 			/**

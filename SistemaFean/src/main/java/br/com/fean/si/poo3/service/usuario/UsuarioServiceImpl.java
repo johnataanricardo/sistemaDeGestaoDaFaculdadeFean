@@ -16,8 +16,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     private UsuarioDAO dao;
 
     @Override
-    public void add(Usuario usuario) {
+    public Usuario add(Usuario usuario) {
         dao.add(usuario);
+        return usuario;
     }
 
     @Override

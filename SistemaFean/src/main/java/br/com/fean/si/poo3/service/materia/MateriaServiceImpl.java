@@ -48,7 +48,7 @@ public class MateriaServiceImpl implements MateriaService {
     }
 
     @Override
-    public MateriaDTO findById(Long id) {
+    public MateriaDTO findByIdDTO(Long id) {
         Materia materia = materiaDAO.findById(id);
         MateriaDTO dto = new MateriaDTO();
         dto.setId(materia.getId());
@@ -57,6 +57,12 @@ public class MateriaServiceImpl implements MateriaService {
         dto.setCategoria(materia.getCategoria());
         dto.setCargaHoraria(materia.getCargaHoraria());
         return dto;
+    }
+
+    @Override
+    public Materia findById(Long id) {
+        Materia materia = materiaDAO.findById(id);
+        return materia;
     }
 
 }

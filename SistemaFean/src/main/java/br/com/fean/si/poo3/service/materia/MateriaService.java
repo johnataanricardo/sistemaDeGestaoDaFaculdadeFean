@@ -17,7 +17,8 @@ public interface MateriaService {
 
     public List<MateriaDTO> materias();
 
-    public MateriaDTO findById(Long id);
-//    public Materia findById(Long id);
+    public MateriaDTO findByIdDTO(Long id);
+
+    public Materia findById(Long id);
 
 }

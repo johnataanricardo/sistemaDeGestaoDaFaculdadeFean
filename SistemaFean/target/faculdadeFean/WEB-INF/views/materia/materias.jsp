@@ -53,9 +53,21 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="/SistemaFean/sala/todos">
                             <i class="fa fa-university"></i>
                             <span class="nav-link-text">Salas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/SistemaFean/curso/todos">
+                            <i class="fa fa-university"></i>
+                            <span class="nav-link-text">Cursos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/SistemaFean/matricula/todas">
+                            <i class="fa fa-id-card"></i>
+                            <span class="nav-link-text">Matrículas</span>
                         </a>
                     </li>
                 </ul>

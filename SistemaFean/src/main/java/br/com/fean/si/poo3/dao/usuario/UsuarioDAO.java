@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UsuarioDAO {
 
-    public void add(Usuario usuario);
+    public Usuario add(Usuario usuario);
 
     public void remove(Long id);
 

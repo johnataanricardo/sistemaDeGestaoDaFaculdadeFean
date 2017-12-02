@@ -45,7 +45,7 @@ public class MateriaController {
 
     @GetMapping("/update/{id}")
     public ModelAndView preUpdate(@PathVariable("id") Long id, ModelMap model) {
-        MateriaDTO materiaDTO = materiaService.findById(id);
+        MateriaDTO materiaDTO = materiaService.findByIdDTO(id);
         model.addAttribute("materia", materiaDTO);
         return new ModelAndView("/materia/cadastro", model);
     }

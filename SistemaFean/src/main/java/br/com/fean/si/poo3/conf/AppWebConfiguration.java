@@ -14,11 +14,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
-@ComponentScan(basePackages = {"br.com.fean.si.poo3.controller", "br.com.fean.si.poo3.dao", "br.com.fean.si.poo3.service"})
-
-
+@ComponentScan(basePackages = {"br.com.fean.si.poo3.controller", "br.com.fean.si.poo3.dao", "br.com.fean.si.poo3.service", "br.com.fean.si.poo3.facade"})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
-
 
     @Bean
     public InternalResourceViewResolver internalResourceViewResolver() {
@@ -31,7 +28,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new TipoSexoConverter());
-        registry.addConverter(new PerfilConverter());
+//        registry.addConverter(new PerfilConverter());
         registry.addConverter(new CategoriaConverter());
     }
 
