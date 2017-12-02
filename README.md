@@ -16,4 +16,6 @@ As seguintes atividades foram definidas: Arquitetura do Software (DONE), Adiçã
 
 Nesta aplicação não há conexão com o banco de dados, todos os valores são armazenados na memória do JAVA.
 
-A aplicação está sendo desenvolvida em JAVA WEB utilizando o Framework Spring MVC, Maven para gerenciamento das dependências e estamos utilizando o seguinte template SB Admin Bootstrap(https://startbootstrap.com/template-overviews/sb-admin/).
+A aplicação foi sendo desenvolvida em JAVA WEB utilizando o Framework Spring MVC, Maven para gerenciamento das dependências e estamos utilizando o seguinte template SB Admin Bootstrap(https://startbootstrap.com/template-overviews/sb-admin/).
+
+Durante o semestre também foi estudado padrões de projeto e o professor passou alguns padrões para que os alunos estudassem e implementasse, nossa dupla ficou responsável pelo padrão de projeto FACADE (https://docs.google.com/presentation/d/1Uv-sS0dtgSm5YjbCSQwN7oBfip8L2eu3OXrFPK46RqU/edit?usp=sharing), no qual implementamos no cadastro de matrículas da faculdade.
