@@ -12,9 +12,9 @@ Foi solicitado que fosse implementado um projeto WEB com apenas 3 Crud's dividim
 
 Eu e Lucas Ribeiro(https://github.com/becoolxz), dividimos nossas tarefas no Trello para que nós tivessemos um controle das atividas a serem realizadas.
 
-As seguintes atividades foram definidas: Arquitetura do Software (DONE), Adição do Template (DONE), Acesso do usuário (In Progress), Controle de usuários (DONE), Controle de Sala (To Do), Controle de Matérias (DONE).
+As seguintes atividades foram definidas: Arquitetura do Software (DONE), Adição do Template (DONE), Acesso do usuário (To Do), Controle de usuários (DONE), Controle de Sala (DONE), Controle de Matérias (DONE).
 
-Nesta aplicação não há conexão com o banco de dados, todos os valores são armazenados na memória do JAVA.
+Nesta aplicação não há conexão com o banco de dados, todos os valores são armazenados na memória do JAVA, conforme solicitação do professor.
 
 A aplicação foi sendo desenvolvida em JAVA WEB utilizando o Framework Spring MVC, Maven para gerenciamento das dependências e estamos utilizando o seguinte template SB Admin Bootstrap(https://startbootstrap.com/template-overviews/sb-admin/).
 
