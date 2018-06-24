@@ -57,7 +57,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
                 .forEach((user) -> {
                     user.setNome(usuario.getNome());
                     user.setDtNascimento(usuario.getDtNascimento());
-                    user.setUsuario(usuario.getUsuario()); // Tirar Depois, não pode ser mudado o nome de usuario
                     user.setSenha(usuario.getSenha());
                     user.setEmail(usuario.getEmail());
                     user.setSexo(usuario.getSexo());

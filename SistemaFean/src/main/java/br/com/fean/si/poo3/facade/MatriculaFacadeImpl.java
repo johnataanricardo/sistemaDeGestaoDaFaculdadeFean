@@ -72,7 +72,7 @@ public class MatriculaFacadeImpl implements MatriculaFacade {
         endereco.setComplemento(matriculaDTO.getComplemento());
         endereco.setNumero(matriculaDTO.getNumero());
 
-        Curso curso = cursoService.findById(2l);
+        Curso curso = cursoService.findById(matriculaDTO.getIdCurso());
 
         matricula.setIdMatriculaAluno(matriculaDTO.getIdMatriculaAluno());
         matricula.setUsuario(usuario);

@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="login">Login de Usuário: </label>
+                    <label for="usuario">Login de Usuário: </label>
                     <form:input path="usuario" class="form-control" placeholder="Login de Usuário" />
                     <form:errors path="usuario" cssClass="label label-danger" />
                 </div>

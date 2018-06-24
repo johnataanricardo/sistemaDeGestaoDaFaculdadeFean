@@ -11,7 +11,6 @@ public class Usuario {
 
     private Long id;
 
-//    @NotBlank
     @Size(min = 3, max = 50, message="Campo requerido entre {min} e {max} caracteres.")
     private String nome;
 
@@ -22,7 +21,6 @@ public class Usuario {
     @Size(min = 5, max = 20, message="Campo requerido entre {min} e {max} caracteres.")
     private String usuario;
 
-//    @NotBlank
     @Size(min = 5, max = 20, message="Campo requerido entre {min} e {max} caracteres.")
     private String senha;
 
